@@ -95,13 +95,13 @@ snippet cla "An entire .h generator" b
 
 class ${1:`!v substitute(substitute(vim_snippets#Filename('$1','ClassName'),'^.','\u&',''), '_\(\w\)', '\u\1', 'g')`}
 {
+public:
+	$1()=default;
+	~$1()=default;
 private:
 	$3
 
-public:
-	$1();
-	virtual ~$1();
-};
+}; // end of $1
 
 #endif /* $2 */
 endsnippet
@@ -118,7 +118,7 @@ snippet fnc "Basic c++ doxygen function template" b
 ${1:ReturnType} ${2:FunctionName}(${3:param})
 {
 	${0:FunctionBody}
-}
+} // end of $2
 endsnippet
 
 snippet boost_test "Boost test module" b
