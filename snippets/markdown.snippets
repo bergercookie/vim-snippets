@@ -142,3 +142,28 @@ snippet pullquote
 	{% pullquote %}
 	${1:text} {" ${2:quote} "} ${0:text}
 	{% endpullquote %}
+
+# tldr related items -----------------------------------------------------------
+snippet tldr
+	# ${1:tldr-title}
+
+	> ${2:overall-description}
+
+	- ${3:command description}:
+
+	\`${4:command}\`
+
+snippet tldr2
+	# ${1:tldr-title}
+
+	> ${2:overall-description}.
+	> More information: <${3:https://...}>
+
+	- ${4:command description}:
+
+	\`${5:command}\`
+
+snippet tldri
+	- ${1:command description}:
+
+	\`${2:command}\`
