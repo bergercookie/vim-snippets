@@ -1,0 +1,37 @@
+snippet jekyll_i
+	---
+	layout: post
+	title:  "${1:Post Title}"
+	date:   ${2:`strftime("%y%m%d")`}
+	author: ${3:bergercookie}
+	published: ${4:true}
+	comments: ${5:true}
+	---
+
+snippet vuln
+	Address: ${1:IP address}
+
+
+	== Port Scan ==
+
+	* ^"nmap -sn 192.168.110.0/24"^
+
+	${2:Results}
+
+	* ^"sudo nmap -Pn -sS -T5 -p- \$V | tee nmap-shallow.txt"^
+
+	${3:Results}
+
+	* ^"nmap -n -Pn -A -T5 -p80,111,777,55399 \$V | tee nmap-deep.txt"^
+
+	${4:Results}
+
+	== Vulnerability analysis ==
+
+	* ^"nikto -h \$V -o nikto.html | tee nikto.txt"^
+
+	${5:Results}
+
+	* ^"gobuster dir -e -u \$V -w /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-small.txt -o dirbuster-small.txt"^
+
+	${6:Results}

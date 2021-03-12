@@ -117,6 +117,11 @@ snippet codeblock-full
 	${0:code_snippet}
 	{% endcodeblock %}
 
+snippet hi
+	{% highlight ${0:lang} ${1:linenos} %}
+	  ${2:code}
+	{% endhighlight %}
+
 snippet gist-full
 	{% gist ${1:gist_id} ${0:filename} %}
 
@@ -147,7 +152,7 @@ snippet pullquote
 snippet tldr
 	# ${1:tldr-title}
 
-	> ${2:overall-description}
+	> ${2:overall-description}.
 
 	- ${3:command description}:
 
