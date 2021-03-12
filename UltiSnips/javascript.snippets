@@ -154,4 +154,28 @@ snippet us
 'use strict'`!p snip.rv = semi(snip)`
 endsnippet
 
+snippet pro "Create a new Promise"
+const promise = new Promise(function(resolve, reject) {
+	${1:callback body}
+})
+endsnippet
+
+snippet proh "Handle a promise"
+${1:promise}
+	.then(
+		function (result) {
+			${2:console.log("My result: ", result);}
+		},
+		function (error) {
+			${3:console.log("My error: ", error);}
+		}
+	)
+	.catch(function (error) {
+		${4:console.error("My caught error: ", error);}
+	})
+	.finally(function () {
+		${5:console.log("In the finally clause...");}
+	});
+endsnippet
+
 # vim:ft=snippets:
